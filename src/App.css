@@ -1,0 +1,154 @@
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* height: 100vh; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.compShadow {
+  box-shadow: 2px 3px 7px 2px #a6a6a6;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  );
+  gap: 20px; 
+  margin-top: 40px;
+}
+
+
+@media (min-width: 768px) {
+  /* For tablets and above */
+  .dashboard-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(220px, 1fr)
+    ); /* Adjust 220px based on your card's width */
+    gap: 20px; /* Slightly larger gap for medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* For laptops and above */
+  .dashboard-container {
+    grid-template-columns: repeat(
+      5,
+      1fr
+    ); /* Exactly 4 cards per row on laptop and larger screens */
+    gap: 20px; /* Larger gap for larger screens */
+  }
+}
+
+
+
+
+/* --------------------------login--------------------------------- */
+
+.account-block {
+  padding: 0;
+  background-image: url(https://bootdey.com/img/Content/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+.account-block .overlay {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.account-block .account-testimonial {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+}
+
+.text-theme {
+  color: #5369f8 !important;
+}
+
+
+
+/* ------------------loader overlay-------------------- */
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Make sure it's on top of other content */
+}
+
+.login-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255); /* Semi-transparent white background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Make sure it's on top of other content */
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
