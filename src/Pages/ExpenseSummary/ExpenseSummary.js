@@ -365,7 +365,6 @@ const ExpenseSummary = () => {
   const callUpdateExpenseModal = (expense) => {
     if (expenseModalRef.current) {
       expenseModalRef.current.showModal();
-      console.log(expense);
       expenseModalRef.current.setFields(expense);
     }
   };
