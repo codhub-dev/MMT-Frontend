@@ -620,7 +620,7 @@ const ExpenseSummary = () => {
                 type="button"
                 className="btn btn-danger btn-rounded btn-floating"
               >
-                Delete
+                <TrashIcon size={16} />
               </button>
             </ConfirmModal>
           </div>
@@ -695,7 +695,7 @@ const ExpenseSummary = () => {
                 type="button"
                 className="btn btn-danger btn-rounded btn-floating"
               >
-                Delete
+                <TrashIcon size={16} />
               </button>
             </ConfirmModal>
           </div>
