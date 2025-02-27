@@ -11,9 +11,6 @@ import dayjs from "dayjs";
 import ConfirmModal from "../../Components/ConfirmModal/ConfirmModal";
 import { ArrowRightIcon, PencilIcon, TrashIcon } from "@primer/octicons-react";
 import { UserContext } from "../../App";
-import moment from "moment";
-// import locale from 'antd/locale/en_GB';
-// import 'dayjs/locale/en-gb';
 
 // dayjs.locale('en-gb');
 
