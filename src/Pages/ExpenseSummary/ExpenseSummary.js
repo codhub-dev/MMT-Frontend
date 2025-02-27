@@ -339,7 +339,7 @@ const ExpenseSummary = () => {
     Axios.put(
       `/api/v1/app/${catalog}/${getUpdateApiEndpoints(catalog)}/${id}`,
       {
-        params: id ,
+        params: id,
       },
       {
         headers: {
@@ -594,20 +594,36 @@ const ExpenseSummary = () => {
         //   fixed: "right",
         width: 40,
         render: (text, record) => (
-          <ConfirmModal
-            title="Confirm Action"
-            content="Are you sure you want to delete?"
-            onOk={() => handleOk(record._id)}
-            key={record._id}
-            onCancel={() => { }}
-          >
-            <button
-              type="button"
-              className="btn btn-danger btn-rounded btn-floating"
+          <div className="d-flex gap-2">
+            <ConfirmModal
+              title="Confirm Action"
+              content="Are you sure you want to update?"
+              onOk={() => callUpdateExpenseModal(record)}
+              key={`update-${record._id}`}  // Unique key for update modal
+              onCancel={() => { }}
             >
-              Delete
-            </button>
-          </ConfirmModal>
+              <button
+                type="button"
+                className="btn btn-primary btn-rounded btn-floating"
+              >
+                <PencilIcon size={16} />
+              </button>
+            </ConfirmModal>
+            <ConfirmModal
+              title="Confirm Action"
+              content="Are you sure you want to delete?"
+              onOk={() => handleOk(record._id)}
+              key={record._id}
+              onCancel={() => { }}
+            >
+              <button
+                type="button"
+                className="btn btn-danger btn-rounded btn-floating"
+              >
+                Delete
+              </button>
+            </ConfirmModal>
+          </div>
         ),
       },
     ],
@@ -653,20 +669,36 @@ const ExpenseSummary = () => {
         //   fixed: "right",
         width: 40,
         render: (text, record) => (
-          <ConfirmModal
-            title="Confirm Action"
-            content="Are you sure you want to delete?"
-            onOk={() => handleOk(record._id)}
-            key={record._id}
-            onCancel={() => { }}
-          >
-            <button
-              type="button"
-              className="btn btn-danger btn-rounded btn-floating"
+          <div className="d-flex gap-2">
+            <ConfirmModal
+              title="Confirm Action"
+              content="Are you sure you want to update?"
+              onOk={() => callUpdateExpenseModal(record)}
+              key={`update-${record._id}`}  // Unique key for update modal
+              onCancel={() => { }}
             >
-              Delete
-            </button>
-          </ConfirmModal>
+              <button
+                type="button"
+                className="btn btn-primary btn-rounded btn-floating"
+              >
+                <PencilIcon size={16} />
+              </button>
+            </ConfirmModal>
+            <ConfirmModal
+              title="Confirm Action"
+              content="Are you sure you want to delete?"
+              onOk={() => handleOk(record._id)}
+              key={record._id}
+              onCancel={() => { }}
+            >
+              <button
+                type="button"
+                className="btn btn-danger btn-rounded btn-floating"
+              >
+                Delete
+              </button>
+            </ConfirmModal>
+          </div>
         ),
       },
     ],
