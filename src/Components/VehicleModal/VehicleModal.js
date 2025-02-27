@@ -60,8 +60,6 @@ const VehicleModal = forwardRef(({ setTrucks, trucks, vehicleData }, ref) => {
   }));
 
   const normFile = (e) => {
-    console.log(e);
-
     if (Array.isArray(e)) {
       return e;
     }
@@ -92,7 +90,6 @@ const VehicleModal = forwardRef(({ setTrucks, trucks, vehicleData }, ref) => {
   const submitDetails = async () => {
     try {
       const values = await form.validateFields(); // Validate and get form values
-      console.log("Form values:", values);
       
       setContentLoader(true);
       if (vehicleData) {

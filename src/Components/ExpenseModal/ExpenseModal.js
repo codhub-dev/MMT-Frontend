@@ -52,8 +52,6 @@ const ExpenseModal = forwardRef(
         setOpen(true);
       },
       setFields: (expense) => {
-        console.log(expense);
-        
         const formattedExpense = {
           ...expense,
           date: expense.date
@@ -103,8 +101,6 @@ const ExpenseModal = forwardRef(
           ...values,
           date: new Date(values.date).valueOf(),
         };
-        console.log(values);
-        console.log(updateData);
         
 
         if (updateData && updateData._id) {
