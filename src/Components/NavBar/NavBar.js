@@ -25,8 +25,6 @@ const NavBar = () => {
   const loc = useLocation();
   const navigate = useNavigate();
 
-  const token = localStorage.getItem('token')
-
   useEffect(() => {
     setTruckDetails({});
     const locPath = loc.pathname.split("/")
@@ -36,7 +34,7 @@ const NavBar = () => {
         `/api/v1/app/truck/getTruckById/${truckId}`,
         {
           headers: {
-            authorization: `bearer ${token}`,
+            authorization: `bearer ${localStorage.getItem("token")}`,
           },
         }
       )

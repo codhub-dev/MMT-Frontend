@@ -16,7 +16,6 @@ const Dashboard = () => {
   const [metadata, setMetadata] = useState([]);
   const { user } = useContext(UserContext);
 
-  const token = localStorage.getItem('token')
 
   useEffect(() => {
     setContentLoader(true);
@@ -25,7 +24,7 @@ const Dashboard = () => {
         addedBy: user.userId,
       },
       headers: {
-        authorization: `bearer ${token}`,
+        authorization: `bearer ${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {
@@ -48,7 +47,7 @@ const Dashboard = () => {
         userId: user.userId,
       },
       headers: {
-        authorization: `bearer ${token}`,
+        authorization: `bearer ${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {

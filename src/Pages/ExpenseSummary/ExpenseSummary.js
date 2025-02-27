@@ -19,8 +19,6 @@ import moment from "moment";
 
 const { RangePicker } = DatePicker;
 
-const token = localStorage.getItem("token");
-
 const formFields = {
   fuelExpenses: [
     {
@@ -236,7 +234,7 @@ const ExpenseSummary = () => {
           selectedDates,
         },
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       })
         .then((res) => {
@@ -257,7 +255,7 @@ const ExpenseSummary = () => {
           selectedDates,
         },
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       })
         .then((res) => {
@@ -283,7 +281,7 @@ const ExpenseSummary = () => {
           selectedDates,
         },
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       })
         .then((res) => {
@@ -304,7 +302,7 @@ const ExpenseSummary = () => {
           selectedDates,
         },
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       })
         .then((res) => {
@@ -327,7 +325,7 @@ const ExpenseSummary = () => {
       {
         params: { id },
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       }
     )
@@ -348,7 +346,7 @@ const ExpenseSummary = () => {
       },
       {
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       }
     )
@@ -400,7 +398,7 @@ const ExpenseSummary = () => {
             },
             responseType: "blob", // Important to receive response as Blob
             headers: {
-              authorization: `bearer ${token}`,
+              authorization: `bearer ${localStorage.getItem('token')}`,
             },
           }
         );
@@ -414,7 +412,7 @@ const ExpenseSummary = () => {
             },
             responseType: "blob", // Important to receive response as Blob
             headers: {
-              authorization: `bearer ${token}`,
+              authorization: `bearer ${localStorage.getItem('token')}`,
             },
           }
         );

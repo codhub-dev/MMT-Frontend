@@ -26,7 +26,6 @@ const VehicleModal = forwardRef(({ setTrucks, trucks, vehicleData }, ref) => {
   const [isFinancedBtn, setIsFinancedBtn] = useState(vehicleData?(vehicleData.isFinanced):false);
 
   const { user } = useContext(UserContext);
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
     setLoading(true);
@@ -104,7 +103,7 @@ const VehicleModal = forwardRef(({ setTrucks, trucks, vehicleData }, ref) => {
           },
           {
             headers: {
-              authorization: `bearer ${token}`,
+              authorization: `bearer ${localStorage.getItem('token')}`,
             },
           }
         )
@@ -134,7 +133,7 @@ const VehicleModal = forwardRef(({ setTrucks, trucks, vehicleData }, ref) => {
           },
           {
             headers: {
-              authorization: `bearer ${token}`,
+              authorization: `bearer ${localStorage.getItem('token')}`,
             },
           }
         )
@@ -161,7 +160,7 @@ const VehicleModal = forwardRef(({ setTrucks, trucks, vehicleData }, ref) => {
     if (deleteTruck) {
       Axios.delete(`/api/v1/app/truck/deleteTruckById/${vehicleData._id}`, {
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       })
         .then(() => {

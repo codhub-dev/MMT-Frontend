@@ -17,8 +17,6 @@ import { set } from "date-fns";
 
 const { Option } = Select;
 
-const token = localStorage.getItem('token')
-
 const ExpenseModal = forwardRef(
   ({ addExpense, category, formFields, apis, onSuccess }, ref) => {
     const [open, setOpen] = useState(false);
@@ -118,7 +116,7 @@ const ExpenseModal = forwardRef(
             },
             {
               headers: {
-                authorization: `bearer ${token}`,
+                authorization: `bearer ${localStorage.getItem("token")}`,
               },
             }
           )
@@ -145,7 +143,7 @@ const ExpenseModal = forwardRef(
             },
             {
               headers: {
-                authorization: `bearer ${token}`,
+                authorization: `bearer ${localStorage.getItem("token")}`,
               },
             }
           )

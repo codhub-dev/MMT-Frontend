@@ -25,8 +25,6 @@ const ProfileDrawer = ({ profileOpen, setProfileOpen }) => {
 
   const { user } = useContext(UserContext);
 
-  const token = localStorage.getItem('token')
-
   useEffect(() => {
     // const userCred = jwtDecode(localStorage.getItem("token"));
     // setuserCredentials(userCred);
@@ -38,7 +36,7 @@ const ProfileDrawer = ({ profileOpen, setProfileOpen }) => {
         userId: user?.userId,
       },
       headers: {
-        authorization: `bearer ${token}`,
+        authorization: `bearer ${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {

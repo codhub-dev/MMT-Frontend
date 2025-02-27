@@ -26,7 +26,6 @@ const CalculateLoan = () => {
   const calculationModalRef = useRef();
   const { user } = useContext(UserContext);
   const { vehicleId } = useParams();
-  const token = localStorage.getItem("token");
 
   const tableColumns = [
     {
@@ -115,7 +114,7 @@ const CalculateLoan = () => {
           selectedDates,
         },
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       })
         .then((res) => {
@@ -164,7 +163,7 @@ const CalculateLoan = () => {
           },
           responseType: "blob", // Important to receive response as Blob
           headers: {
-            authorization: `bearer ${token}`,
+            authorization: `bearer ${localStorage.getItem('token')}`,
           },
         }
       );
@@ -194,7 +193,7 @@ const CalculateLoan = () => {
     Axios.delete(`/api/v1/app/calculateLoan/deleteLoanCalculationById/${id}`, {
       params: { id },
       headers: {
-        authorization: `bearer ${token}`,
+        authorization: `bearer ${localStorage.getItem('token')}`,
       },
     })
       .then(() => {
@@ -214,7 +213,7 @@ const CalculateLoan = () => {
           selectedDates,
         },
         headers: {
-          authorization: `bearer ${token}`,
+          authorization: `bearer ${localStorage.getItem('token')}`,
         },
       })
         .then((res) => {

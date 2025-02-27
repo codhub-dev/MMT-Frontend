@@ -15,8 +15,6 @@ import moment from "moment";
 
 const { Option } = Select;
 
-const token = localStorage.getItem("token");
-
 const CalculationsModal = forwardRef(
   ({ addCalculation, category, formFields, apis, onSuccess }, ref) => {
     const [open, setOpen] = useState(false);
@@ -81,7 +79,7 @@ const CalculationsModal = forwardRef(
           },
           {
             headers: {
-              authorization: `bearer ${token}`,
+              authorization: `bearer ${localStorage.getItem("token")}`,
             },
           }
         )

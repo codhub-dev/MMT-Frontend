@@ -17,8 +17,6 @@ const CatalogModal = forwardRef(({ vehicleId, regNo, isFinanced }, ref) => {
 
   const navigate = useNavigate();
 
-  const token = localStorage.getItem("token");
-
   const showLoading = () => {
     setOpen(true);
     setLoading(true);
@@ -28,7 +26,7 @@ const CatalogModal = forwardRef(({ vehicleId, regNo, isFinanced }, ref) => {
         truckId: vehicleId,
       },
       headers: {
-        authorization: `bearer ${token}`,
+        authorization: `bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => {
