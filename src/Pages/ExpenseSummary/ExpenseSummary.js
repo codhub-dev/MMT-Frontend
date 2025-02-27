@@ -9,7 +9,7 @@ import { DatePicker, Space } from "antd";
 // import moment from "moment";
 import dayjs from "dayjs";
 import ConfirmModal from "../../Components/ConfirmModal/ConfirmModal";
-import { ArrowRightIcon } from "@primer/octicons-react";
+import { ArrowRightIcon, PencilIcon, TrashIcon } from "@primer/octicons-react";
 import { UserContext } from "../../App";
 import moment from "moment";
 // import locale from 'antd/locale/en_GB';
@@ -526,7 +526,7 @@ const ExpenseSummary = () => {
                 type="button"
                 className="btn btn-primary btn-rounded btn-floating"
               >
-                Edit
+                <PencilIcon size={16} />
               </button>
             </ConfirmModal>
             <ConfirmModal
@@ -540,7 +540,7 @@ const ExpenseSummary = () => {
                 type="button"
                 className="btn btn-danger btn-rounded btn-floating"
               >
-                Delete
+                <TrashIcon size={16} />
               </button>
             </ConfirmModal>
           </div>
